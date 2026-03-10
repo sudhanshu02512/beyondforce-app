@@ -1,0 +1,14 @@
+.container{
+  display:flex;
+  min-height:calc(100vh - 120px);
+}
+
+.layout{
+  display:flex;
+  margin-top:60px; /* navbar height */
+}
+
+.content{
+  flex:1;
+  padding:30px;
+}

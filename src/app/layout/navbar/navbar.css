@@ -1,0 +1,49 @@
+.navbar{
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;        /* fills full width safely */
+
+  height:60px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 24px;
+
+  background:white;
+  border-bottom:1px solid #e5e7eb;
+
+  z-index:1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #4f46e5;
+}
+
+.logo-text{
+    font-family: cursive;
+}
