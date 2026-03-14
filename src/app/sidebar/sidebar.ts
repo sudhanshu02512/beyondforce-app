@@ -1,24 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterLink,RouterLinkActive } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
+import menu from './menu';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterLink, NgIf,RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './sidebar.html',
-  styleUrl: './sidebar.css'
+  styleUrl: './sidebar.css',
 })
 export class Sidebar {
+  menu = menu;
 
-  apexOpen = true;
-  lwcOpen = true;
-
-  toggleApex(){
-    this.apexOpen = !this.apexOpen;
+  toggleMenu(section: any) {
+    section.open = !section.open;
   }
-
-  toggleLwc(){
-    this.lwcOpen = !this.lwcOpen;
-  }
-
 }

@@ -1,53 +1,29 @@
 <div class="sidebar">
 
-  <!-- Apex Section -->
-  <div class="section-header" (click)="toggleApex()">
+  @for (section of menu; track section.title) {
 
-    <span>
-      <svg class="arrow" [class.rotate]="apexOpen" viewBox="0 0 24 24">
-        <path d="M9 6l6 6-6 6"></path>
-      </svg>
-      Apex
-    </span>
+    <!-- Section Header -->
+    <div class="section-header" (click)="toggleMenu(section)">
+      <span>
+        <svg class="arrow" [class.rotate]="section.open" viewBox="0 0 24 24">
+          <path d="M9 6l6 6-6 6"></path>
+        </svg>
+        {{ section.title }}
+      </span>
+    </div>
 
-  </div>
+    @if (section.open) {
+      <ul>
+        @for (item of section.items; track item.label) {
+          <li>
+            <a [routerLink]="item.route" routerLinkActive="active">
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    }
 
-  <ul *ngIf="apexOpen">
-
-    <li>
-      <a routerLink="/docs/apex/schema" routerLinkActive="active">Schema</a>
-    </li>
-
-  </ul>
-
-
-  <!-- LWC Section -->
-  <div class="section-header" (click)="toggleLwc()">
-
-
-    <span>
-      <svg class="arrow" [class.rotate]="lwcOpen" viewBox="0 0 24 24">
-        <path d="M9 6l6 6-6 6"></path>
-      </svg>
-      LWC
-    </span>
-
-  </div>
-
-  <ul *ngIf="lwcOpen">
-
-    <li>
-      <a routerLink="/docs/lightning-web-component/composition" routerLinkActive="active">
-        Composition
-      </a>
-    </li>
-
-    <li>
-      <a routerLink="/docs/lightning-web-component/sharing-javascript-code" routerLinkActive="active">
-        Sharing Javascript
-      </a>
-    </li>
-
-  </ul>
-
+  }
+  
 </div>
