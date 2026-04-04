@@ -8,7 +8,10 @@ export const routes: Routes = [
   path: '',
   component: Home
 },
-
+{
+  path: 'docs/:category',
+  component: PageViewer
+},
 {
   path: 'docs/:category/:page',
   component: PageViewer

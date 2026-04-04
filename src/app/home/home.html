@@ -1,14 +1,14 @@
 <section class="hero">
 
-  <h1>BeyondForce</h1>
+  <h1><b>Beyond</b>Force</h1>
 
   <p class="tagline">
     Learn Salesforce Development with clear examples, diagrams and real code.
   </p>
 
   <div class="hero-buttons">
-    <a routerLink="/docs/apex/schema" class="primary-btn">Start Learning</a>
-    <a href="https://github.com" target="_blank" class="secondary-btn">
+    <a routerLink="/docs/lightning-platform-layers/introduction" class="primary-btn">Start Learning</a>
+    <a href="https://github.com/sudhanshu02512" target="_blank" class="secondary-btn">
       View on GitHub
     </a>
   </div>
@@ -18,22 +18,11 @@
 
 <section class="cards">
 
-  <div class="card">
-    <h2>Apex</h2>
-    <p>Learn Apex fundamentals, triggers, SOQL, and best practices.</p>
-    <a routerLink="/docs/apex/schema">Explore Apex →</a>
-  </div>
-
-  <div class="card">
-    <h2>LWC</h2>
-    <p>Understand Lightning Web Components with practical examples.</p>
-    <a routerLink="/docs/lightning-web-component/composition">Explore LWC →</a>
-  </div>
-
-  <div class="card">
-    <h2>Architecture</h2>
-    <p>Understand Salesforce architecture and development patterns.</p>
-    <a routerLink="/">Coming Soon →</a>
-  </div>
-
+  @for(item of menu; track item.title) {
+    <div class="card">
+      <h2>{{item.title}}</h2>
+      <p>{{item.description}}</p>
+      <a [routerLink]="item.route" >Explore {{item.title}} →</a>
+    </div>
+  }
 </section>
