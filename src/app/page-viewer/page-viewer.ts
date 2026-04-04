@@ -26,9 +26,14 @@ export class PageViewer implements OnInit {
 
       const category = params['category'];
       const page = params['page'];
+      let url="";
 
-      const url =
-      `web-pages/${category}/${page}/${page}.html`;
+      if (category != undefined && page == undefined) {
+        url = `web-pages/${category}/${category}.html`;
+      }
+      if(category != undefined && page != undefined) {
+        url = `web-pages/${category}/${page}/${page}.html`;
+      }
 
       this.http.get(url, { responseType: 'text' })
       .subscribe(html => {
