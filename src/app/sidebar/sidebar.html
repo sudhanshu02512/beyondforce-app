@@ -1,29 +1,25 @@
 <div class="sidebar">
-
-  @for (section of menu; track section.title) {
-
-    <!-- Section Header -->
-    <div class="section-header" (click)="toggleMenu(section)">
-      <span>
-        <svg class="arrow" [class.rotate]="section.open" viewBox="0 0 24 24">
-          <path d="M9 6l6 6-6 6"></path>
-        </svg>
-        {{ section.title }}
-      </span>
-    </div>
-
-    @if (section.open) {
-      <ul>
-        @for (item of section.items; track item.label) {
-          <li>
-            <a [routerLink]="item.route" routerLinkActive="active">
-              {{ item.label }}
-            </a>
-          </li>
-        }
-      </ul>
-    }
-
-  }
-  
+<mat-tree #tree [dataSource]="menuConfigSource" [childrenAccessor]="menuChildrenAccessor">
+  <!-- This is the for leaf nodes -->
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+    <!-- use a disabled button to provide padding for tree leaf -->
+    <button matIconButton disabled></button>
+    <a [routerLink]="node.route" routerLinkActive="active">
+      {{node.label}}
+    </a>
+  </mat-tree-node>
+  <!-- This is the for expandable nodes -->
+  <mat-tree-node *matTreeNodeDef="let node;when: menuHasChild" matTreeNodePadding matTreeNodeToggle
+                 [cdkTreeNodeTypeaheadLabel]="node.label">
+    <button matIconButton matTreeNodeToggle
+            [attr.aria-label]="'Toggle ' + node.label">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{tree.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    <a [routerLink]="node.route" routerLinkActive="active">
+      {{node.label}}
+    </a>
+  </mat-tree-node>
+</mat-tree>
 </div>
