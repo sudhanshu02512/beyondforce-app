@@ -1,6 +1,7 @@
 let menu = [
     {
       title: 'Lightning Platform Layers',
+      api: 'lightning-platform-layers',
       open: false,
       route: '/docs/lightning-platform-layers',
       description:'Explore the Lightning Platform Layers (LPL) and understand how they interact to build powerful applications.',
@@ -8,6 +9,7 @@ let menu = [
     },
     {
       title: 'Apex',
+      api: 'apex',
       open: false,
       route: '/docs/apex',
       description:'Learn Apex fundamentals, triggers, SOQL, and best practices.',
@@ -15,6 +17,7 @@ let menu = [
     },
     {
       title: 'Lightning Web Components',
+      api: 'lightning-web-components',
       open: false,
       route: '/docs/lightning-web-component',
       description:'Master Lightning Web Components (LWC) with guides on composition and sharing JavaScript code.',

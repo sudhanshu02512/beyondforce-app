@@ -1,17 +1,27 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import menu from '../config/menu';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon'; 
+import {MatButtonModule} from '@angular/material/button';
+import { MenuNode } from '@utility/menu-tree';
+import { getMenuConfig } from 'app/configs/menu-configs/menu-config';
+
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, MatTreeModule, MatIconModule, MatButtonModule],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
-  menu = menu;
 
-  toggleMenu(section: any) {
-    section.open = !section.open;
+  menuConfigSource : MenuNode[] = [];
+  menuChildrenAccessor = (node: MenuNode) => node.items ?? [];
+  menuHasChild = (_: number, node: MenuNode) => !!node.items && node.items.length > 0;
+
+  ngOnInit() {
+    this.menuConfigSource = getMenuConfig();
+    console.log('menuConfigMap in sidebar component:', this.menuConfigSource);
   }
+
 }

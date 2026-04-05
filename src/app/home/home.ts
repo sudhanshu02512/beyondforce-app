@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import menu from '../config/menu';
 import { RouterLink } from '@angular/router';
+import { windowTop } from '../utility/utility';
+import { MenuNode } from '@utility/menu-tree';
+import { getMenuConfig } from 'app/configs/menu-configs/menu-config';
+
 @Component({
   selector: 'app-home',
   imports: [RouterLink],
@@ -8,5 +11,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './home.css',
 })
 export class Home {
-  menu = menu;
+
+  menu: MenuNode[] = [];
+ 
+  ngOnInit() {
+    windowTop();
+    this.menu = getMenuConfig();
+  }
+
 }

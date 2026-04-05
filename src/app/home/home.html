@@ -18,11 +18,11 @@
 
 <section class="cards">
 
-  @for(item of menu; track item.title) {
+  @for(item of menu; track item.label) {
     <div class="card">
-      <h2>{{item.title}}</h2>
+      <h2>{{item.label}}</h2>
       <p>{{item.description}}</p>
-      <a [routerLink]="item.route" >Explore {{item.title}} →</a>
+      <a [routerLink]="item.route" >Explore →</a>
     </div>
   }
 </section>

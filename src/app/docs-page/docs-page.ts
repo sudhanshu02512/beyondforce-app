@@ -5,13 +5,13 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-page-viewer',
+  selector: 'app-docs-page',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './page-viewer.html'
+  templateUrl: './docs-page.html',
 })
-export class PageViewer implements OnInit {
-
+export class DocsPage implements OnInit {
+  
   htmlContent: SafeHtml = '';
 
   constructor(
@@ -26,14 +26,7 @@ export class PageViewer implements OnInit {
 
       const category = params['category'];
       const page = params['page'];
-      let url="";
-
-      if (category != undefined && page == undefined) {
-        url = `web-pages/${category}/${category}.html`;
-      }
-      if(category != undefined && page != undefined) {
-        url = `web-pages/${category}/${page}/${page}.html`;
-      }
+      const url = `web-pages/${category}/${page}/${page}.html`;
 
       this.http.get(url, { responseType: 'text' })
       .subscribe(html => {
@@ -46,5 +39,4 @@ export class PageViewer implements OnInit {
     });
 
   }
-
 }
