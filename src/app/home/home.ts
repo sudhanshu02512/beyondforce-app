@@ -3,7 +3,7 @@ import { RouterLink } from '@angular/router';
 import { windowTop } from '../utility/utility';
 import { MenuNode } from '@utility/menu-tree';
 import { getMenuConfig } from 'app/configs/menu-configs/menu-config';
-
+import { getActiveMenuConfig } from 'app/configs/menu-configs/menu-config';
 @Component({
   selector: 'app-home',
   imports: [RouterLink],
@@ -16,7 +16,7 @@ export class Home {
  
   ngOnInit() {
     windowTop();
-    this.menu = getMenuConfig();
+    this.menu = getActiveMenuConfig();
   }
 
 }
