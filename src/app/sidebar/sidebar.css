@@ -4,10 +4,10 @@
   position: fixed;
   top: 60px;      /* navbar height */
   left: 0;
-  width: 260px;
-  height: calc(100vh - 60px);
+  /* width: 260px;
+  height: calc(100vh - 60px); */
 
-  background: #f8f9fb;
+  /* background: #f8f9fb; */
   padding: 20px;
 
   overflow-y: auto;

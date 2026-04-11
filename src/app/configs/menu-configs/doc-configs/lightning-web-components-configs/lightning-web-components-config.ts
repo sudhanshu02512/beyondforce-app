@@ -8,6 +8,6 @@ lightningWebComponentsConfig.api = 'lightning-web-components';
 lightningWebComponentsConfig.route = '/docs/lightning-web-components';
 lightningWebComponentsConfig.active = true;
 lightningWebComponentsConfig.description = 'Master Lightning Web Components (LWC) with guides on composition and sharing JavaScript code.';
-lightningWebComponentsConfig.items = [compositionConfig, shareJavascriptConfig];
+// lightningWebComponentsConfig.items = [compositionConfig, shareJavascriptConfig];
 
 export {lightningWebComponentsConfig as default};
