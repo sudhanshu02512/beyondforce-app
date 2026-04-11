@@ -6,6 +6,12 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+:root {
+  @include mat.tree-overrides((
+    container-background-color: none
+  ));
+}
+
 html {
   @include mat.theme((
     color: (
