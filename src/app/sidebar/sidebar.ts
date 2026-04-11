@@ -4,7 +4,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon'; 
 import {MatButtonModule} from '@angular/material/button';
 import { MenuNode } from '@utility/menu-tree';
-import { getMenuConfig } from 'app/configs/menu-configs/menu-config';
+import { getActiveMenuConfig } from 'app/configs/menu-configs/menu-config';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,8 +20,7 @@ export class Sidebar {
   menuHasChild = (_: number, node: MenuNode) => !!node.items && node.items.length > 0;
 
   ngOnInit() {
-    this.menuConfigSource = getMenuConfig();
-    console.log('menuConfigMap in sidebar component:', this.menuConfigSource);
+    this.menuConfigSource = getActiveMenuConfig();
   }
 
 }

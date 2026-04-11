@@ -16,4 +16,8 @@ function getMenuConfig() {
     return Array.from(menuConfigMap.values());
 }
 
-export {menuConfigMap as default,getMenuConfig};
+function getActiveMenuConfig() {
+    return Array.from(menuConfigMap.values()).filter((config): config is typeof config => !!config.active);
+}
+
+export {menuConfigMap as default,getMenuConfig,getActiveMenuConfig};
