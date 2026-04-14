@@ -48,6 +48,9 @@
 .nav-links a:hover {
   color: var(--primary-color);
 }
+.reading-mode-icon:hover {
+  color: var(--primary-color);
+}
 
 .logo-text{
     font-family: Arial, Helvetica, sans-serif;

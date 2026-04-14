@@ -1,1 +1,7 @@
-<div [innerHTML]="htmlContent"></div>
+@if (showSpinner) {
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+} @else {
+  <div [innerHTML]="htmlContent"></div>
+}
