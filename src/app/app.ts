@@ -5,6 +5,8 @@ import { Navbar } from './navbar/navbar';
 import { Sidebar } from './sidebar/sidebar';
 import { Footer } from './footer/footer';
 
+import { ThemeService } from './services/theme';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -18,5 +20,11 @@ import { Footer } from './footer/footer';
   styleUrl: './app.css'
 })
 export class App {
-
+  constructor(private themeService: ThemeService) { }
+  isReadingMode = false;
+  ngOnInit() {
+    this.themeService.readingMode$.subscribe(mode => {
+      this.isReadingMode = mode;
+    });
+  }
 }

@@ -5,17 +5,22 @@ import { DocsPage } from './docs-page/docs-page';
 
 export const routes: Routes = [
 
-{
-  path: '',
-  component: Home
-},
-{
-  path: 'docs/:category',
-  component: DocsHome
-},
-{
-  path: 'docs/:category/:page',
-  component: DocsPage
-}
+  {
+    path: '',
+    component: Home
+  },
+  {
+    path: 'docs/:category',
+    component: DocsHome
+  },
+  {
+    path: 'docs/:category/:page',
+    component: DocsPage
+  },
+
+  {
+    path: 'docs/:category/:page/:subpage',
+    component: DocsPage
+  }
 
 ];

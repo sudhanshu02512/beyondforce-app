@@ -1,13 +1,15 @@
-<!-- Navigation Bar -->
-<app-navbar></app-navbar>
+<div [class.reading-mode]="isReadingMode">
+  <!-- Navigation Bar -->
+  <app-navbar></app-navbar>
 
-<!-- Main Content Area with Sidebar and Router Outlet -->
-<div class="layout">
-  <app-sidebar></app-sidebar>
-  <main class="content">
-    <router-outlet></router-outlet>
-  </main>
+  <!-- Main Content Area with Sidebar and Router Outlet -->
+  <div class="layout">
+    <app-sidebar></app-sidebar>
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
 </div>
-
-<!-- Footer -->
-<app-footer></app-footer>

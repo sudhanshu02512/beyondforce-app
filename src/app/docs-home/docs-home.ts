@@ -7,10 +7,12 @@ import { RouterLink } from '@angular/router';
 // import menuMap from '../config/menu-map';
 import { windowTop } from '../utility/utility';
 import menuMap from 'app/configs/menu-configs/menu-config';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @Component({
   selector: 'app-docs-home',
   standalone: true,
-  imports: [CommonModule,RouterLink],
+  imports: [CommonModule,RouterLink,MatProgressSpinnerModule],
   templateUrl: './docs-home.html',
   styleUrl: './docs-home.css',
 })
@@ -19,9 +21,9 @@ export class DocsHome implements OnInit {
   pageLabel?: string;
   pageDescription?: string;
   customPageAvailable = true;
-
   htmlContent: SafeHtml = '';
   menuItems: any[] = [];
+  showSpinner = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,6 +48,7 @@ export class DocsHome implements OnInit {
       this.http.get(url, { responseType: 'text' })
       .subscribe(html => {
         this.htmlContent = this.sanitizer.bypassSecurityTrustHtml(html);
+        this.showSpinner = false;
       });
 
     });
