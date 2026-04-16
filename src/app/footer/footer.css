@@ -1,9 +1,8 @@
-.footer{
-  height:60px;
-  border-top:1px solid #eee;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:14px;
-  color:#666;
+.footer {
+  min-height: 3.75rem;        /* 60px → rem */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  margin-top: auto;           /* 🔥 THIS FIXES EVERYTHING */
 }

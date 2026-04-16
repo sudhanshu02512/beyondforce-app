@@ -1,6 +1,8 @@
-
 <header class="navbar">
   <div class="logo">
+    @if(isMobile){
+      <mat-icon aria-hidden="false" aria-label="Home" fontIcon="menu" class="menu" (click)="onMenuClick()"></mat-icon>
+    }
     <a routerLink="/">
       <img src="logo.svg" height="24" />
     </a>
@@ -17,8 +19,11 @@
         fontIcon="home"
       ></mat-icon
     ></a>
-    <span class="material-symbols-outlined reading-mode-icon" (click)="toggleReadingMode()">
-      {{sunglassIcon}}
+    <span
+      class="material-symbols-outlined reading-mode-icon"
+      (click)="toggleReadingMode()"
+    >
+      {{ sunglassIcon }}
     </span>
   </nav>
 </header>

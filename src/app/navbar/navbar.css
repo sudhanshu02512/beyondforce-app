@@ -1,20 +1,11 @@
 .navbar{
-  position: fixed;
-  top:0;
-  left:0;
-  right:0;        /* fills full width safely */
-
-  height:60px;
-
+  height:4rem;
   display:flex;
   align-items:center;
   justify-content:space-between;
-
   padding:0 24px;
-
   background:white;
   border-bottom:1px solid #e5e7eb;
-
   z-index:1000;
 }
 
@@ -54,4 +45,7 @@
 
 .logo-text{
     font-family: Arial, Helvetica, sans-serif;
+}
+.menu:hover {
+  color: var(--primary-color);
 }
