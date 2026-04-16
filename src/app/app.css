@@ -1,14 +1,25 @@
-.container{
-  display:flex;
-  min-height:calc(100vh - 120px);
+/* ===== NAVBAR ===== */
+app-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: white;
+  display: block; /* ✅ IMPORTANT */
 }
 
-.layout{
-  display:flex;
-  margin-top:60px; /* navbar height */
+/* ===== SIDEBAR ===== */
+app-sidebar {
+  overflow-y: auto;
 }
 
-.content{
-  flex:1;
-  padding:30px;
+/* ===== CONTENT ===== */
+.content {
+  padding: var(--spacing);
+  overflow-y: auto;
+}
+
+/* ===== FOOTER ===== */
+app-footer {
+  padding: var(--spacing);
+  text-align: center;
 }

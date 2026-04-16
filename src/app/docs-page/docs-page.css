@@ -1,12 +1,7 @@
-/* .doc-page{
-max-width:900px;
-padding:20px;
-line-height:1.6;
-} */
- 
 .spinner-container{
   display: flex;
   justify-content: center;  /* horizontal center */
   align-items: center;      /* vertical center */
   height: 70vh;            /* full screen height */
 }
+
