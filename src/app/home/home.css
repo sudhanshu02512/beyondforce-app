@@ -1,6 +1,7 @@
 .hero{
   text-align:center;
   padding:0px 20px;
+  background: var(--background-color);
 }
 
 .hero h1{
@@ -26,7 +27,7 @@
 
 .primary-btn{
   background:var(--primary-color);
-  color:white;
+  color:var(--background-color);
   padding:12px 24px;
   border-radius:8px;
   text-decoration:none;
@@ -59,7 +60,7 @@
   border:1px solid #e5e7eb;
   border-radius:12px;
   padding:25px;
-  background:white;
+  background: var(--background-color);
   transition:0.2s;
 }
 
@@ -89,7 +90,7 @@
   padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  color: white;
+  color: var(--background-color);
   border:1px solid var(--secondary-color);
   padding:12px 32px;
   border-radius:8px;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon'; 
@@ -21,6 +21,11 @@ export class Sidebar {
 
   ngOnInit() {
     this.menuConfigSource = getActiveMenuConfig();
+  }
+  @Output() treeNodeClick = new EventEmitter<void>();
+
+  onTreeNodeClick(){
+    this.treeNodeClick.emit();
   }
 
 }

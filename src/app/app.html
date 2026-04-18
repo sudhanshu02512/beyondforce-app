@@ -4,7 +4,7 @@
 
   <!-- Main Content Area with Sidebar and Router Outlet -->
   <div class="layout">
-    <app-sidebar [class.open]="isSidebarOpen"></app-sidebar>
+    <app-sidebar [class.open]="isSidebarOpen" (treeNodeClick)="toggleSidebar()"></app-sidebar>
     <main class="content">
       <router-outlet></router-outlet>
     </main>

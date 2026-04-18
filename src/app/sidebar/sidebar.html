@@ -4,20 +4,20 @@
   <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
     <!-- use a disabled button to provide padding for tree leaf -->
     <button matIconButton disabled></button>
-    <a [routerLink]="node.route" routerLinkActive="active">
+    <a [routerLink]="node.route" routerLinkActive="active" (click)="onTreeNodeClick()">
       {{node.label}}
     </a>
   </mat-tree-node>
   <!-- This is the for expandable nodes -->
   <mat-tree-node *matTreeNodeDef="let node;when: menuHasChild" matTreeNodePadding matTreeNodeToggle
-                 [cdkTreeNodeTypeaheadLabel]="node.label">
+                 [cdkTreeNodeTypeaheadLabel]="node.label" >
     <button matIconButton matTreeNodeToggle
             [attr.aria-label]="'Toggle ' + node.label">
       <mat-icon class="mat-icon-rtl-mirror">
         {{tree.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
       </mat-icon>
     </button>
-    <a [routerLink]="node.route" routerLinkActive="active">
+    <a [routerLink]="node.route" routerLinkActive="active" (click)="onTreeNodeClick()">
       {{node.label}}
     </a>
   </mat-tree-node>

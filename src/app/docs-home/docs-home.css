@@ -17,6 +17,10 @@
 margin-bottom:0.2em;
 }
 
+.docs-home{
+  background-color: var(--background-color);
+}
+
 .spinner-container{
   display: flex;
   justify-content: center;  /* horizontal center */

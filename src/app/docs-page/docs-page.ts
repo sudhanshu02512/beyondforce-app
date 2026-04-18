@@ -10,6 +10,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
   standalone: true,
   imports: [CommonModule,MatProgressSpinnerModule],
   templateUrl: './docs-page.html',
+  styleUrl: './docs-page.css',
 })
 export class DocsPage implements OnInit {
   
