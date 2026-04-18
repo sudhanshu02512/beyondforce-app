@@ -3,7 +3,7 @@ app-navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: white;
+  background:var(--background-color);
   display: block; /* ✅ IMPORTANT */
 }
 
