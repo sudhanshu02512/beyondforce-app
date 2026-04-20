@@ -24,6 +24,7 @@ export class DocsHome implements OnInit {
   htmlContent: SafeHtml = '';
   menuItems: any[] = [];
   showSpinner = true;
+  showContent = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -43,7 +44,9 @@ export class DocsHome implements OnInit {
       this.pageLabel = pageData?.label || '';
       this.pageDescription = pageData?.description || '';
       const items = pageData?.items || [];
+      const showContent = pageData?.showContent;
       this.menuItems = items;
+      this.showContent = items.length > 0 && showContent;
 
       this.http.get(url, { responseType: 'text' })
       .subscribe(html => {

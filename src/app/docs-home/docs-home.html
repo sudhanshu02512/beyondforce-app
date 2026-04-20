@@ -9,13 +9,15 @@
       <div class="html-content" [innerHTML]="htmlContent"></div>
     }
     <!-- Section -->
-    <h2>Beyond Content</h2>
-    @for (item of menuItems; track item.label; let idx = $index) {
-      <section class="docs-home-section">
-        <a [routerLink]="item.route" class="links"
-          >{{ idx + 1 }}. {{ item.label }}</a
-        >
-      </section>
+    @if (showContent) {
+      <h2>Beyond Content</h2>
+      @for (item of menuItems; track item.label; let idx = $index) {
+        <section class="docs-home-section">
+          <a [routerLink]="item.route" class="links"
+            >{{ idx + 1 }}. {{ item.label }}</a
+          >
+        </section>
+      }
     }
   </div>
 }

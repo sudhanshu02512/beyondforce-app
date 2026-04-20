@@ -7,7 +7,7 @@ lightningWebComponentsConfig.label = 'Lightning Web Components';
 lightningWebComponentsConfig.api = 'lightning-web-components';
 lightningWebComponentsConfig.route = '/docs/lightning-web-components';
 lightningWebComponentsConfig.active = true;
-lightningWebComponentsConfig.description = 'Master Lightning Web Components (LWC) with guides on composition and sharing JavaScript code.';
+lightningWebComponentsConfig.description = 'Learn Lightning Web Components (LWC) to build modern, fast, and reusable UI components using HTML, JavaScript, and Salesforce data.';
 // lightningWebComponentsConfig.items = [compositionConfig, shareJavascriptConfig];
 
 export {lightningWebComponentsConfig as default};
