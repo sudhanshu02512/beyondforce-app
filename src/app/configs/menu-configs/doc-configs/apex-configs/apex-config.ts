@@ -11,7 +11,8 @@ apexConfig.label = "Apex";
 apexConfig.api = "apex";
 apexConfig.route = "/docs/apex";
 apexConfig.active = true;
-apexConfig.description = "Learn Apex fundamentals, triggers, SOQL, and best practices.";
+apexConfig.description = 'Learn Apex, Salesforce’s powerful server-side programming language for building scalable business logic, triggers, and integrations.';
 apexConfig.items = [introductionConfig, workingOfApexConfig, apexClassesConfig, asynchronousApexConfig];
+apexConfig.showContent = true;
 
 export { apexConfig as default };

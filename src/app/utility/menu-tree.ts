@@ -6,6 +6,7 @@ class MenuNode {
   description?: string;
   items?: MenuNode[];
   buildNumber?: string;
+  showContent?:boolean;
 }
 
 export { MenuNode };

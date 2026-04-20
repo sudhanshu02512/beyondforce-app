@@ -112,7 +112,7 @@
 .heart {
   position: absolute;
   font-size: 24px;
-  animation: fadeUp 1s ease-out forwards;
+  animation: fadeUp 2s ease-out forwards;
 }
 
 /* SIMPLE animation */
@@ -128,4 +128,8 @@
 .no-select {
   user-select: none !important;
   pointer-events: none; /* optional */
+}
+
+.card-title{
+  line-height: 1.1;
 }

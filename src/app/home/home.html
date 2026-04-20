@@ -1,36 +1,44 @@
-<section class="hero">
-  <h1><b>Beyond</b>Force<b>.org</b></h1>
+<div class="page-wrapper">
+  <section class="hero">
+    <h1><b>Beyond</b>Force<b>.org</b></h1>
 
-  <p class="tagline">Learn Salesforce Beyond Limits. Grow. Build. Go Beyond.</p>
+    <p class="tagline">
+      Learn Salesforce Beyond Limits. Grow. Build. Go Beyond.
+    </p>
 
-  <div class="hero-buttons">
-    <a
-      routerLink="/docs/lightning-platform-layers/introduction"
-      class="primary-btn"
-      >Start Learning</a
-    >
-    <div class="love-btn secondary-btn" (click)="showHearts()" (mouseover)="showHearts()">Love ❤️</div>
-
-    <div class="heart-container">
-      <span
-        class="heart no-select"
-        *ngFor="let heart of hearts"
-        [style.left.px]="heart.x"
-        [style.top.px]="heart.y"
-        [style.transform]="heart.transform"
+    <div class="hero-buttons">
+      <a routerLink="/docs/lightning-platform-layers" class="primary-btn"
+        >Start Learning</a
       >
-        ❤️
-      </span>
-    </div>
-  </div>
-</section>
+      <div
+        class="love-btn secondary-btn"
+        (click)="showHearts()"
+        (mouseover)="showHearts()"
+      >
+        Love ❤️
+      </div>
 
-<section class="cards">
-  @for (item of menu; track item.label) {
-    <div class="card">
-      <h2>{{ item.label }}</h2>
-      <p>{{ item.description }}</p>
-      <a [routerLink]="item.route">Explore →</a>
+      <div class="heart-container">
+        <span
+          class="heart no-select"
+          *ngFor="let heart of hearts"
+          [style.left.px]="heart.x"
+          [style.top.px]="heart.y"
+          [style.transform]="heart.transform"
+        >
+          ❤️
+        </span>
+      </div>
     </div>
-  }
-</section>
+  </section>
+
+  <section class="cards">
+    @for (item of menu; track item.label) {
+      <div class="card">
+        <h2 class="card-title">{{ item.label }}</h2>
+        <p>{{ item.description }}</p>
+        <a [routerLink]="item.route">Explore →</a>
+      </div>
+    }
+  </section>
+</div>

@@ -2,15 +2,12 @@
 
 .sidebar {
   position: fixed;
-  top: 60px;      /* navbar height */
   left: 0;
-  /* width: 260px;
-  height: calc(100vh - 60px); */
-
-  /* background: #f8f9fb; */
   padding: 20px;
-
   overflow-y: auto;
+  padding-top: 60px;
+  
+  height: 100%;
 }
 
 /* Menu link */
@@ -29,7 +26,6 @@
 .sidebar a.active{
   color:var(--tree-node-active);
   font-weight: 400;
-  /* padding:4px 8px; */
   border-radius:6px;
 }
 

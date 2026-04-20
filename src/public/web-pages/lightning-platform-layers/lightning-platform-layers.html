@@ -1,4 +1,248 @@
-<h1>Lightning Platform Layers</h1>
-<p>
-  The Lightning Platform is built on a multi-layered architecture that provides a robust and scalable foundation for developing applications.
-</p>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Salesforce Lightning Platform Layers</title>
+
+    <style>
+      /* ===== WRAPPER ===== */
+      .sf-wrapper {
+        background: var(--background-color);
+        color: var(--text-color);
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+        padding: var(--spacing);
+        min-height: 100vh;
+      }
+
+      /* ===== TITLE (UPDATED TO BLACK) ===== */
+      .sf-wrapper h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--text-color);
+      }
+
+      /* ===== GRID ===== */
+      .sf-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing);
+      }
+
+      /* ===== CARD ===== */
+      .sf-card {
+        background: var(--white-color);
+        border-radius: 16px;
+        padding: 18px;
+        color: var(--text-color);
+        border: 2px solid #e5e7eb;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sf-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      /* subtle glow */
+      .sf-card::after {
+        content: "";
+        position: absolute;
+        right: -20px;
+        bottom: -20px;
+        width: 120px;
+        height: 120px;
+        opacity: 0.06;
+        background: radial-gradient(
+          circle,
+          var(--primary-color) 10%,
+          transparent 60%
+        );
+      }
+
+      /* ===== ICON ===== */
+      .sf-icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 10px;
+      }
+
+      /* ===== TEXT ===== */
+      .sf-card h2 {
+        margin: 0 0 6px;
+      }
+
+      .sf-card p {
+        margin: 4px 0;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      /* ===== COLOR ACCENTS ===== */
+      .presentation {
+        border-left: 4px solid var(--primary-color);
+      }
+      .logic {
+        border-left: 4px solid var(--success-color);
+      }
+      .integration {
+        border-left: 4px solid var(--warning-color);
+      }
+      .security {
+        border-left: 4px solid var(--error-color);
+      }
+      .persistence {
+        border-left: 4px solid #a855f7;
+      }
+      .metadata {
+        border-left: 4px solid #14b8a6;
+      }
+      .platform {
+        border-left: 4px solid #64748b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="sf-wrapper">
+      <h1>Salesforce Lightning Platform Layers</h1>
+      <div class="sf-divider">
+        <svg
+          width="100%"
+          height="40"
+          viewBox="0 0 800 40"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="transparent" />
+              <stop offset="50%" stop-color="var(--primary-color)" />
+              <stop offset="100%" stop-color="transparent" />
+            </linearGradient>
+          </defs>
+          <line
+            x1="0"
+            y1="20"
+            x2="800"
+            y2="20"
+            stroke="url(#lineGradient)"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+      <div class="sf-container">
+        <div class="sf-card presentation">
+          <svg
+            class="sf-icon"
+            fill="none"
+            stroke="var(--primary-color)"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <rect x="3" y="4" width="18" height="14" rx="2" />
+          </svg>
+          <h2>Presentation Layer</h2>
+          <p>UI where users interact</p>
+          <p><b>Components :</b> LWC, Aura, Lightning Experience, Mobile</p>
+        </div>
+
+        <div class="sf-card logic">
+          <svg
+            class="sf-icon"
+            fill="none"
+            stroke="var(--success-color)"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 2v20M2 12h20" />
+          </svg>
+          <h2>Application Logic Layer</h2>
+          <p>Handles business rules & processes</p>
+          <p><b>Components:</b> Apex, Triggers, Flows, Validation Rules</p>
+        </div>
+
+        <div class="sf-card integration">
+          <svg
+            class="sf-icon"
+            fill="none"
+            stroke="var(--warning-color)"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 7h16M4 17h16" />
+          </svg>
+          <h2>Integration Layer</h2>
+          <p>Connects Salesforce with external systems</p>
+          <p><b>Components:</b> REST, SOAP, Bulk API, Platform Events</p>
+        </div>
+
+        <div class="sf-card security">
+          <svg
+            class="sf-icon"
+            fill="none"
+            stroke="var(--error-color)"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z" />
+          </svg>
+          <h2>Security Layer</h2>
+          <p>Controls access and permissions</p>
+          <p>
+            <b>Components:</b> Auth, Profiles, Permission Sets, Sharing, FLS,
+            CRUD
+          </p>
+        </div>
+
+        <div class="sf-card persistence">
+          <svg
+            class="sf-icon"
+            fill="none"
+            stroke="#a855f7"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <ellipse cx="12" cy="6" rx="8" ry="3" />
+            <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" />
+          </svg>
+          <h2>Persistence Layer</h2>
+          <p>Stores and manages data</p>
+          <p><b>Components :</b> Objects, Records, SOQL, DML, Transactions</p>
+        </div>
+
+        <div class="sf-card metadata">
+          <svg
+            class="sf-icon"
+            fill="none"
+            stroke="#14b8a6"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 4h16v16H4z" />
+          </svg>
+          <h2>Metadata Layer</h2>
+          <p>Defines configuration & behavior</p>
+          <p>
+            <b>Components:</b> Object definitions, Layouts, Flows, Custom Labels
+          </p>
+        </div>
+
+        <div class="sf-card platform">
+          <svg
+            class="sf-icon"
+            fill="none"
+            stroke="var(--text-muted)"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M3 12h18M12 3v18" />
+          </svg>
+          <h2>Platform / Infrastructure Layer</h2>
+          <p>Underlying cloud infrastructure (Salesforce-managed)</p>
+          <p><b>Components</b> Servers, DB, scaling, backups</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
